@@ -42,15 +42,15 @@ server.post('/habitat', (req, res) => {
 })
 
 server.post('/atracao', (req, res) => {
-    const {nome, animais} = req.body;
-    const atracao = new Atracao(nome, animais);
+    const {nome, habitat} = req.body;
+    const atracao = new Atracao(nome, habitat);
     console.log(atracao);
     res.status(200).json("Atração criada");
 })
 
 server.post('/zoologico', (req, res) => {
-    const {nome, animais} = req.body;
-    const zoo = new Zoologico(nome, animais);
+    const {nome, atracao} = req.body;
+    const zoo = new Zoologico(nome, atracao);
     console.log(zoo);
     res.status(200).json("Zoológico criado");
 })

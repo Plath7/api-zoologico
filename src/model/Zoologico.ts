@@ -1,5 +1,4 @@
 import { Atracao } from "./Atracao";
-import {  } from "./Habitat";
 
 export class Zoologico{
     private nome: string;
