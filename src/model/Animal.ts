@@ -12,34 +12,36 @@ export class Animal {
         this.genero = _genero;
 
     }
-    public getNome(): string {
-        return this.nome;
-    }
+   // Método para obter o nome
+public getNome(): string {
+    return this.nome; // Retorna o valor do atributo nome
+}
 
-    // Método set para o atributo nome
-    public setNome(nome: string) {
-        this.nome = nome;
-    }
+// Método set para o atributo nome
+public setNome(nome: string) {
+    this.nome = nome; // Define o valor do atributo nome
+}
 
-    // Método get para o atributo idade
-    public getIdade(): number {
-        return this.idade;
-    }
+// Método para obter a idade
+public getIdade(): number {
+    return this.idade; // Retorna o valor do atributo idade
+}
 
-    // Método set para o atributo idade
-    public setIdade(idade: number) {
-        this.idade = idade;
-    }
+// Método set para o atributo idade
+public setIdade(idade: number) {
+    this.idade = idade; // Define o valor do atributo idade
+}
 
-    // Método get para o atributo genero
-    public getGenero(): string {
-        return this.genero;
-    }
+// Método para obter o gênero
+public getGenero(): string {
+    return this.genero; // Retorna o valor do atributo genero
+}
 
-    // Método set para o atributo genero
-    public setGenero(genero: string) {
-        this.genero = genero;
-    }
+// Método set para o atributo genero
+public setGenero(genero: string) {
+    this.genero = genero; // Define o valor do atributo genero
+}
+
 }
 
 
