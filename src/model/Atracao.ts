@@ -1,39 +1,53 @@
-// Importação da classe Habitat que é usada como tipo para o atributo listaHabitats
 import { Habitat } from './Habitat';
 
-// Definição da classe Atracao
 export class Atracao {
-    // Declaração dos atributos privados nome e listaHabitats
-    private nome: string;
-    private listaHabitats: Habitat;
+    private nome: string;  // * Atributo privado para armazenar o nome da atração
+    private listaHabitats: Habitat; // * Atributo privado para armazenar a lista de habitats da atração
 
-    // Método construtor da classe Atracao
-    constructor(
-        _nome: string,               // Parâmetro representando o nome da atração
-        _listaHabitats: Habitat    // Parâmetro representando a lista de habitats na atração
-    ) {
-        // Inicialização dos atributos nome e listaHabitats com os valores passados como parâmetros
+    /**
+     * Construtor da classe Atracao.
+     * 
+     * @param _nome O nome da atração.
+     * @param _listaHabitats A lista de habitats na atração.
+     */
+    constructor(_nome: string, _listaHabitats: Habitat) {
         this.nome = _nome;
         this.listaHabitats = _listaHabitats;
     }
 
-    // Método para obter o nome da atração
+    /**
+     * Método para obter o nome da atração.
+     * 
+     * @returns O nome da atração.
+     */
     public getNome(): string {
-        return this.nome; // Retorna o valor do atributo nome
+        return this.nome;
     }
 
-    // Método para definir o nome da atração
+    /**
+     * Método para definir o nome da atração.
+     * 
+     * @param nome O nome a ser definido para a atração.
+     */
     public setNome(nome: string): void {
-        this.nome = nome; // Define o valor do atributo nome
+        this.nome = nome;
     }
 
-    // Método para obter a lista de habitats na atração
+    /**
+     * Método para obter a lista de habitats na atração.
+     * 
+     * @returns A lista de habitats na atração.
+     */
     public getListaHabitats(): Habitat {
-        return this.listaHabitats; // Retorna o valor do atributo listaHabitats
+        return this.listaHabitats;
     }
 
-    // Método para definir a lista de habitats na atração
+    /**
+     * Método para definir a lista de habitats na atração.
+     * 
+     * @param listaHabitats A lista de habitats a ser definida para a atração.
+     */
     public setListaHabitats(listaHabitats: Habitat): void {
-        this.listaHabitats = listaHabitats; // Define o valor do atributo listaHabitats
+        this.listaHabitats = listaHabitats;
     }
 }

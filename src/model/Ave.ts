@@ -1,33 +1,43 @@
-// Importação da classe Animal que é estendida pela classe Ave
 import { Animal } from './Animal';
 
-// Definição da classe Ave
 export class Ave extends Animal {
-    // Declaração do atributo privado envergadura do tipo number
-    private envergadura: number;
+    private envergadura: number; // * Atributo privado para armazenar a envergadura da ave
 
-    // Método construtor da classe Ave
+
+    /**
+     * Construtor da classe Ave.
+     * 
+     * @param _nome O nome da ave.
+     * @param _idade A idade da ave.
+     * @param _genero O gênero da ave.
+     * @param _envergadura A envergadura da ave.
+     */
     constructor(
-        _nome: string,       // Parâmetro representando o nome da ave
-        _idade: number,      // Parâmetro representando a idade da ave
-        _genero: string,     // Parâmetro representando o gênero da ave
-        _envergadura: number // Parâmetro representando a envergadura da ave
+        _nome: string,
+        _idade: number,
+        _genero: string,
+        _envergadura: number
     ) {
-        // Chamada ao construtor da classe pai (Animal) com os parâmetros correspondentes
         super(_nome, _idade, _genero);
-        // Atribuição do valor do parâmetro _envergadura ao atributo envergadura
         this.envergadura = _envergadura;
     }
 
-    // Método para obter a envergadura da ave
+    /**
+     * Método para obter a envergadura da ave.
+     * 
+     * @returns A envergadura da ave.
+     */
     public getEnvergadura(): number {
-        return this.envergadura; // Retorna o valor do atributo envergadura
+        return this.envergadura;
     }
 
-    // Método para definir a envergadura da ave
+    /**
+     * Método para definir a envergadura da ave.
+     * 
+     * @param envergadura A envergadura a ser definida para a ave.
+     */
     public setEnvergadura(envergadura: number): void {
-        this.envergadura = envergadura; // Define o valor do atributo envergadura
+        this.envergadura = envergadura;
     }
-
-    // Os métodos getNome e setNome são herdados da classe Animal, então não precisam ser redefinidos aqui
 }
+

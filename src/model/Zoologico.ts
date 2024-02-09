@@ -1,36 +1,54 @@
-// Importação da classe Atracao que é usada como tipo para o atributo listaAtracoes
 import { Atracao } from './Atracao';
 
-// Definição da classe Zoologico
 export class Zoologico {
-    // Declaração dos atributos privados nome e listaAtracoes
-    private nome: string;
-    private listaAtracoes: Atracao;
+    private nome: string;  // * Atributo privado para armazenar o nome do zoológico
+    private listaAtracoes: Atracao; // * Atributo privado para armazenar a lista de atrações do zoológico
 
-    // Método construtor da classe Zoologico
+
+    /**
+     * Construtor da classe Zoologico.
+     * 
+     * @param _nome O nome do zoológico.
+     * @param _listaAtracoes A lista de atrações do zoológico.
+     */
     constructor(_nome: string, _listaAtracoes: Atracao) {
-        // Inicialização dos atributos nome e listaAtracoes com os valores passados como parâmetros
         this.nome = _nome;
         this.listaAtracoes = _listaAtracoes;
     }
 
-    // Método para obter o nome do zoológico
+    /**
+     * Método para obter o nome do zoológico.
+     * 
+     * @returns O nome do zoológico.
+     */
     public getNome(): string {
-        return this.nome; // Retorna o valor do atributo nome
+        return this.nome;
     }
 
-    // Método para definir o nome do zoológico
+    /**
+     * Método para definir o nome do zoológico.
+     * 
+     * @param nome O nome a ser definido para o zoológico.
+     */
     public setNome(nome: string): void {
-        this.nome = nome; // Define o valor do atributo nome
+        this.nome = nome;
     }
 
-    // Método para obter a lista de atrações do zoológico
+    /**
+     * Método para obter a lista de atrações do zoológico.
+     * 
+     * @returns A lista de atrações do zoológico.
+     */
     public getListaAtracoes(): Atracao {
-        return this.listaAtracoes; // Retorna o valor do atributo listaAtracoes
+        return this.listaAtracoes;
     }
 
-    // Método para definir a lista de atrações do zoológico
+    /**
+     * Método para definir a lista de atrações do zoológico.
+     * 
+     * @param listaAtracoes A lista de atrações a ser definida para o zoológico.
+     */
     public setListaAtracoes(listaAtracoes: Atracao): void {
-        this.listaAtracoes = listaAtracoes; // Define o valor do atributo listaAtracoes
+        this.listaAtracoes = listaAtracoes;
     }
 }

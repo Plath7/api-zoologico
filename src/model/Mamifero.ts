@@ -1,33 +1,42 @@
-// Importação da classe Animal que é estendida pela classe Mamifero
 import { Animal } from './Animal';
 
-// Definição da classe Mamifero
 export class Mamifero extends Animal {
-    // Declaração do atributo privado raca do tipo string
-    private raca: string;
+    private raca: string; // * Atributo privado para armazenar a raça do mamífero
 
-    // Método construtor da classe Mamifero
+
+    /**
+     * Construtor da classe Mamifero.
+     * 
+     * @param _raca A raça do mamífero.
+     * @param _nome O nome do mamífero.
+     * @param _idade A idade do mamífero.
+     * @param _genero O gênero do mamífero.
+     */
     constructor(
-        _raca: string,       // Parâmetro representando a raça do mamífero
-        _nome: string,      // Parâmetro representando o nome do mamífero
-        _idade: number,     // Parâmetro representando a idade do mamífero
-        _genero: string     // Parâmetro representando o gênero do mamífero
+        _raca: string,
+        _nome: string,
+        _idade: number,
+        _genero: string
     ) {
-        // Chamada ao construtor da classe pai (Animal) com os parâmetros correspondentes
         super(_nome, _idade, _genero);
-        // Atribuição do valor do parâmetro _raca ao atributo raca
         this.raca = _raca;
     }
 
-    // Método para obter a raça do mamífero
+    /**
+     * Método para obter a raça do mamífero.
+     * 
+     * @returns A raça do mamífero.
+     */
     public getRaca(): string {
-        return this.raca; // Retorna o valor do atributo raca
+        return this.raca;
     }
 
-    // Método para definir a raça do mamífero
+    /**
+     * Método para definir a raça do mamífero.
+     * 
+     * @param raca A raça a ser definida para o mamífero.
+     */
     public setRaca(raca: string): void {
-        this.raca = raca; // Define o valor do atributo raca
+        this.raca = raca;
     }
-
-    // Os métodos getNome e setNome são herdados da classe Animal, então não precisam ser redefinidos aqui
 }
