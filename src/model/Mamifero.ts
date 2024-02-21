@@ -1,6 +1,10 @@
 import { Animal } from './Animal';
+import { DatabaseModel } from './DatabaseModel';
+
+const database = new DatabaseModel().pool;
 
 export class Mamifero extends Animal {
+   
     private raca: string; // * Atributo privado para armazenar a raça do mamífero
 
 
@@ -39,4 +43,37 @@ export class Mamifero extends Animal {
     public setRaca(raca: string): void {
         this.raca = raca;
     }
+
+    static async listarMamiferos(): Promise<Mamifero[]> {
+        try {
+            const database = new DatabaseModel().pool;
+            const query = `SELECT * FROM mamifero`;
+            const result = await database.query(query);
+            return result.rows;
+        } catch (error) {
+            console.error('Erro ao listar mamíferos:', error);
+            throw error;
+        }
+    }
+
+    static async cadastrarMamifero(mamifero: Mamifero): Promise<boolean> {
+        try {
+            let insertResult = false;
+            await database.query(`INSERT INTO mamifero (raca, nome, idade, genero)
+                VALUES
+                ('${mamifero.getRaca().toUpperCase()}', '${mamifero.getNome().toUpperCase()}', ${mamifero.getIdade()}, '${mamifero.getGenero().toUpperCase()}');
+            `).then((result) => {
+                if(result.rowCount != 0) {
+                    insertResult = true;
+                }
+            });
+            return true;
+        } catch (error) {
+            console.error('Erro ao cadastrar mamífero:', error);
+            return false;
+        }
+    }
+
+
 }
+

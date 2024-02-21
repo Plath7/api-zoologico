@@ -1,4 +1,5 @@
 import { Animal } from './Animal';
+import { DatabaseModel } from './DatabaseModel';
 
 export class Ave extends Animal {
     private envergadura: number; // * Atributo privado para armazenar a envergadura da ave
@@ -39,5 +40,37 @@ export class Ave extends Animal {
     public setEnvergadura(envergadura: number): void {
         this.envergadura = envergadura;
     }
+
+
+    static async listarAves(): Promise<Ave[]> {
+        try {
+            const database = new DatabaseModel().pool;
+            const query = `SELECT * FROM ave`;
+            const result = await database.query(query);
+            return result.rows;
+        } catch (error) {
+            console.error('Erro ao listar aves:', error);
+            throw error;
+        }
+    }
+
+
+    static async cadastrarAve(ave: Ave): Promise<boolean> {
+        try {
+            const database = new DatabaseModel().pool;
+            const query = `
+                INSERT INTO ave (nome, idade, genero, envergadura)
+                VALUES 
+            `;
+            const values = [ave.getNome(), ave.getIdade(), ave.getGenero(), ave.getEnvergadura()];
+            await database.query(query, values);
+            return true;
+        } catch (error) {
+            console.error('Erro ao cadastrar ave:', error);
+            return false;
+        }
+    }
+
+   
 }
 
