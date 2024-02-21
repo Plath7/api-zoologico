@@ -2,5 +2,5 @@
     "watch": [ "src" ],
     "ext": "ts",
     "ignore": [],
-    "exec": "ts-node ./src/controller/teste.ts"
+    "exec": "ts-node ./src/model/app.ts"
   }

@@ -3,7 +3,19 @@ CREATE TABLE ave (id SERIAL NOT NULL PRIMARY KEY,
 					 idade INT, 
 					 genero VARCHAR(12)NOT NULL, 
 					 envergadura FLOAT);
-		
+CREATE TABLE reptil (id SERIAL NOT NULL PRIMARY KEY,  
+					 nome VARCHAR(50) NOT NULL,
+					 idade INT,
+					 genero VARCHAR(50) NOT NULL,
+					 tipo_de_escamas VARCHAR(50)
+					);
+					
+CREATE TABLE mamifero (id SERIAL NOT NULL PRIMARY KEY,  
+					 nome VARCHAR(50) NOT NULL,
+					 idade INT,
+					 genero VARCHAR(12) NOT NULL,
+					 raca VARCHAR(15)
+					);
 
 
 
