@@ -65,7 +65,7 @@ export class Atracao {
     /**
      * Adiciona um habitat à lista de habitats da atração.
      * 
-     * @param _habitat O habitat a ser adicionado à atração.
+     * @param _habitat O habitat a ser adicionado à atraçao.
      */
     public adicionarHabitat(_habitat: Habitat): void {
         this.listaHabitats.push(_habitat);
